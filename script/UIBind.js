@@ -5,7 +5,9 @@
 		UI = scheduleTransfer.UI;
 	UI.onGoogleAuth = function () {
 		google.auth().then(function () {
-			UI.setCalendarList(google.getCalendarList());
+			google.getCalendarList().then(UI.setCalendarList);
+		}).catch(function (err) {
+			console.error(err);
 		});
 	}
 	UI.onNulpLinkInput = nulp.setLink;
