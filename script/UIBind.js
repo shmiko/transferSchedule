@@ -3,7 +3,11 @@
 	var google = scheduleTransfer.google,
 		nulp = scheduleTransfer.nulp,
 		UI = scheduleTransfer.UI;
-	UI.onGoogleAuth = google.auth;
+	UI.onGoogleAuth = function () {
+		google.auth().then(function () {
+			UI.setCalendarList(google.getCalendarList());
+		});
+	}
 	UI.onNulpLinkInput = nulp.setLink;
 	UI.onCalendarSelect = google.setCalendar;
 	UI.onNulpScheduleStartDateInput = nulp.setStartDate;

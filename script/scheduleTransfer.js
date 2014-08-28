@@ -7,7 +7,8 @@ window.scheduleTransfer = {
 		onCalendarSelect : undefined,
 		onNulpScheduleStartDateInput : undefined,
 		onNulpScheduleEndDateInput : undefined,
-		onStartTransfer : undefined
+		onStartTransfer : undefined,
+		setCalendarList : undefined,
 	},
 	google : {
 		auth : undefined,
