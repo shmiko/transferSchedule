@@ -1,8 +1,29 @@
 <html>
-	<head></head>
+	<head>
+		<title>nulp schedule transfer</title>
+	</head>
 	<body>
-		<h1>Select your schedule:</h1>
-		<iframe src="http://lp.edu.ua/node/40" id="nulpIframe"></iframe>
+		<div>
+			<h1>Initialise</h1>
+			<label>Paste link to your schedule: <input name="nulpLink"></label><br>
+			<label>Login into Google calendar: <button id="googleBtn">login</button></label>
+		</div>
+		<div>
+			<h1>google calendar settings</h1>
+			<label>select calendar: <select></select></label>
+		</div>
+		<div>
+			<h1>nulp schedule settings</h1>
+			<label>from: <input type="date"></label>
+			<label>to: <input type="date"></label>
+		</div>
+		<div>
+			<h1>Start transfer</h1>
+			<button>start</button>
+		</div>
+		<script type="text/javascript" src="https://www.promisejs.org/polyfills/promise-4.0.0.js"></script>
 		<script type="text/javascript" src="script/nulpIframeCut.js"></script>
+		<script type="text/javascript" src="script/scheduleTransfer.js"></script>
+		<script type="text/javascript" src="script/UIBind.js"></script>
 	</body>
 </html>
