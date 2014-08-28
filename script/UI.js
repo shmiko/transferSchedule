@@ -24,4 +24,10 @@ window.scheduleTransfer.UI._inputTests = {
 	transferBtn.onclick = function () {
 		UI.onStartTransfer();
 	};
+	UI.setCalendarList = function (calendarList) {
+		var optionsHtml = '';
+		calendarList.forEach(function (calendar) {
+			optionsHtml += '<option value=' + calendar.id + '>' + calendar.name + '</option>';
+		});
+	}
 } (window.scheduleTransfer.UI));
