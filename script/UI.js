@@ -8,7 +8,8 @@ window.scheduleTransfer.UI._inputTests = {
 		dateInputs = document.getElementsByName('dateInput'),
 		startDateInput = dateInputs[0],
 		endDateInput = dateInputs[1],
-		transferBtn = document.getElementById('start');
+		transferBtn = document.getElementById('start'),
+		calendarSelect = document.getElementById('calendarList');
 	googleBtn.onclick = function () {
 		UI.onGoogleAuth();
 	};
@@ -29,5 +30,6 @@ window.scheduleTransfer.UI._inputTests = {
 		calendarList.forEach(function (calendar) {
 			optionsHtml += '<option value=' + calendar.id + '>' + calendar.name + '</option>';
 		});
-	}
+		calendarSelect.innerHTML = optionsHtml;
+	};
 } (window.scheduleTransfer.UI));
