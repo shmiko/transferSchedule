@@ -32,4 +32,7 @@ window.scheduleTransfer.UI._inputTests = {
 		});
 		calendarSelect.innerHTML = optionsHtml;
 	};
+	calendarSelect.onchange = function () {
+		UI.onCalendarSelect(calendarSelect.value);
+	}
 } (window.scheduleTransfer.UI));

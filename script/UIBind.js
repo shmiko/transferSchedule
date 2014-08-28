@@ -6,6 +6,7 @@
 	UI.onGoogleAuth = function () {
 		google.auth().then(function () {
 			google.getCalendarList().then(UI.setCalendarList);
+			UI.onCalendarSelect();
 		}).catch(function (err) {
 			console.error(err);
 		});

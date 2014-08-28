@@ -1,12 +1,8 @@
 'use strict';
 (function (google) {
-	var config = {
-		'client_id'		: '1032024970797-9ve7tv2elvv5bk16dge56uvpqobegmpp.apps.googleusercontent.com',
-    	'scope'			: 'https://www.googleapis.com/auth/calendar'
-	};
 	google.auth = function () {
 		return new Promise(function (fulfill, reject) {
-			window.gapi.auth.authorize(config, function () {
+			window.gapi.auth.authorize(google.config, function () {
 				try {
 					window.gapi.client.load('calendar', 'v3', function(arg) {
 						fulfill(arg);
@@ -22,9 +18,19 @@
 		return new Promise(function (fulfill) {
 			var request = window.gapi.client.calendar.calendarList.list();
 			request.execute(function(res) {
-				console.log(res.items);
-			    fulfill(res.items);   
+				var calendars = res.items.map(function (el) {
+					return {
+						id : el.id,
+						name : el.summary,
+					};
+				});
+			    fulfill(calendars);   
 			});
 		});
 	};
+	var calendarId = null;
+	google.setCalendar = function (calId) {
+		calendarId = calId;
+		console.log('set id: ', calendarId);
+	}
 }(window.scheduleTransfer.google));

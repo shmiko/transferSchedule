@@ -15,6 +15,7 @@ window.scheduleTransfer = {
 		addEvent : undefined,
 		setCalendar : undefined,
 		getCalendarList : undefined,
+		config : {}
 	},
 	nulp : {
 		setLink : undefined,
